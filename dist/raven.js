@@ -1,4 +1,4 @@
-/*! Raven.js 1.1.18 (8ad15bc) | github.com/getsentry/raven-js */
+/*! Raven.js 1.1.18 (e4f5a1b) | github.com/getsentry/raven-js */
 
 /*
  * Includes TraceKit
@@ -1150,7 +1150,7 @@ var Raven = {
         // assemble the endpoint from the uri pieces
         globalServer = '//' + uri.host +
                       (uri.port ? ':' + uri.port : '') +
-                      '/' + path + 'api/' + globalProject + '/store/';
+                      '/' + path + globalProject;
 
         if (uri.protocol) {
             globalServer = uri.protocol + ':' + globalServer;

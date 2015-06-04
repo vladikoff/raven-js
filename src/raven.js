@@ -91,7 +91,7 @@ var Raven = {
         // assemble the endpoint from the uri pieces
         globalServer = '//' + uri.host +
                       (uri.port ? ':' + uri.port : '') +
-                      '/' + path + 'api/' + globalProject + '/store/';
+                      '/' + path + globalProject;
 
         if (uri.protocol) {
             globalServer = uri.protocol + ':' + globalServer;
