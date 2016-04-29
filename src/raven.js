@@ -133,7 +133,7 @@ Raven.prototype = {
         this._globalServer = this._getGlobalServer(uri);
 
         this._globalEndpoint = this._globalServer +
-            '/' + path + 'api/' + this._globalProject + '/store/';
+            '/' + path + this._globalProject;
 
         if (this._globalOptions.fetchContext) {
             TraceKit.remoteFetching = true;

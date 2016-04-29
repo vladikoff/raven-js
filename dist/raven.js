@@ -1,4 +1,4 @@
-/*! Raven.js 2.3.0 (b09d766) | github.com/getsentry/raven-js */
+/*! Raven.js 2.3.0 (64245e6) | github.com/getsentry/raven-js */
 
 /*
  * Includes TraceKit
@@ -158,7 +158,7 @@ Raven.prototype = {
         this._globalServer = this._getGlobalServer(uri);
 
         this._globalEndpoint = this._globalServer +
-            '/' + path + 'api/' + this._globalProject + '/store/';
+            '/' + path + this._globalProject;
 
         if (this._globalOptions.fetchContext) {
             TraceKit.remoteFetching = true;
