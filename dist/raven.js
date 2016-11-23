@@ -1,4 +1,4 @@
-/*! Raven.js 2.3.0 (64245e6) | github.com/getsentry/raven-js */
+/*! Raven.js 2.3.0 (bf3bd3a) | github.com/getsentry/raven-js */
 
 /*
  * Includes TraceKit
@@ -682,7 +682,12 @@ Raven.prototype = {
                 });
                 fill(proto, 'removeEventListener', function (orig) {
                     return function (evt, fn, capture, secure) {
-                        fn = fn && (fn.__raven_wrapper__ ? fn.__raven_wrapper__  : fn);
+                        try {
+                          fn = fn && (fn.__raven_wrapper__ ? fn.__raven_wrapper__  : fn);
+                        } catch (e) {
+                           // ignore, accessing __raven_wrapper__ will throw in some Selenium environments
+                        }
+
                         return orig.call(this, evt, fn, capture, secure);
                     };
                 });
