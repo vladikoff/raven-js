@@ -205,7 +205,7 @@ Raven.prototype = {
         self._globalServer = self._getGlobalServer(uri);
 
         self._globalEndpoint = self._globalServer +
-            '/' + path + 'api/' + self._globalProject + '/store/';
+            '/' + path + self._globalProject;
 
         // Reset backoff state since we may be pointing at a
         // new project/server

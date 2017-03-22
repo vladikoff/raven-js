@@ -1,4 +1,4 @@
-/*! Raven.js 3.13.0 (14f0148) | github.com/getsentry/raven-js */
+/*! Raven.js 3.13.0 (a721c9f) | github.com/getsentry/raven-js */
 
 /*
  * Includes TraceKit
@@ -270,7 +270,7 @@ Raven.prototype = {
         self._globalServer = self._getGlobalServer(uri);
 
         self._globalEndpoint = self._globalServer +
-            '/' + path + 'api/' + self._globalProject + '/store/';
+            '/' + path + self._globalProject;
 
         // Reset backoff state since we may be pointing at a
         // new project/server
